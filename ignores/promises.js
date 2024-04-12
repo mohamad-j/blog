@@ -11,16 +11,19 @@ function writeSomeText() {
 }
 
 function prettierText(p_text) {
-    console.log("prettierText started..." + p_text);
-    // Simulating an asynchronous operation
     return new Promise(function(resolve, reject) {
         setTimeout(function() {
             let text = p_text + "asdasd ";
             console.log(" prettierText Ready");
-            resolve(text);
+            if( text.length > 10 ) {
+                resolve(text);
+            }else {
+                reject("Text is not long enough.");
+            }   
         }, 1000);
     });
 }
+
 
 function writtingCompleted() {
     console.log("Operation completed.");

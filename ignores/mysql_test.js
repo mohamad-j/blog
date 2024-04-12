@@ -7,10 +7,10 @@ const pool = mysql.createPool({
     database: 'blog'
 });
 
-pool.query(" select * from user; " , function( error, result, fields ){
+pool.query(" select * from user; " , function(error, results, fields){
 
     // Do you application actions
-    console.log(' result ', result );
+    console.log(' results ', results );
     
     // Close the connection
     pool.end();
