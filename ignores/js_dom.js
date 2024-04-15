@@ -13,14 +13,19 @@
 // You can select elements in the document using the following methods:
 // Example:
 // Select an element by its id
+// Return the element as an Object with the specified ID
 const element = document.getElementById('myElement');
 // Select an element by its class name
+// Return a collection ( Array ) of elements with the specified class name
 const elements_by_class = document.getElementsByClassName('myClass');
 // Select an element by its tag name
+// Return a collection ( Array ) of elements with the specified tag name
 const elements_by_tag = document.getElementsByTagName('div');
 // Select an element by its CSS selector
-const element_by_selector = document.querySelector('.myClass');
+// Return the first element that matches the specified CSS selector
+const element_by_selector = document.querySelector('div #istest .calssname');
 // Select multiple elements by their CSS selector
+// Return a collection ( Array ) of elements that match the specified CSS selector
 const elements_by_selector_all = document.querySelectorAll('.myClass');
 
 // 2. Modifying Elements
@@ -59,7 +64,7 @@ element.insertBefore(newElement, element.firstChild);
 // You can handle events on elements in the document using the following methods:
 // Example:
 // Add an event listener to an element
-element.addEventListener('click', function(){
+element.addEventListener('click', function (){
     console.log('Element clicked!');
 });
 // Remove an event listener from an element

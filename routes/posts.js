@@ -5,6 +5,8 @@ const mysql = require('mysql2');
 /** Declare routes for Router */
 
 // posts/all
+// localhost:3000
+// localhost:3000/posts/all
 router.get('/all', function(req, res){
     
     let pool = mysql.createPool({
@@ -22,7 +24,23 @@ router.get('/all', function(req, res){
 
 // posts/create
 router.post('/create', function(req, res){
-    res.json({ message: 'Create post' });
+    let sql = ` insert into post( author_id, title, slug, created_at )
+                values( 6, 'test titel', 'Slug awqrtqqe', NOW() ) `;
+
+    let pool = mysql.createPool({
+        host:'localhost',
+        user: 'root',
+        password: 'root123456',
+        database: 'blog'
+    });
+
+
+    pool.query( sql, function( error, result ){
+        pool.end();
+
+        res.json({mesage: "Done",err: error, the_result: result });
+
+    });
 });
 
 // posts/update

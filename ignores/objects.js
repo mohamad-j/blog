@@ -50,3 +50,4 @@ person.fullName = function() {
 // objectName.methodName()
 // Example
 person.fullName();
+
