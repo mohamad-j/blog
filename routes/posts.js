@@ -23,11 +23,13 @@ router.get('/all', function(req, res){
 });
 
 // /posts/create
+/**
+ * titel: string
+ * slug: string
+ */
 router.post('/create', function(req, res){
     req.body;
     // { title: 'test titel', slug: 'Slug change'}
-
-    req.body.title;
 
     let sql = ` insert into post( author_id, title, slug, created_at )
                 values( 6, 'test titel', 'Slug change', NOW() ) `;

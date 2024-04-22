@@ -3,7 +3,6 @@ let form = document.getElementById('post-info');
 form.addEventListener('submit', function( event ){
 
     event.preventDefault();
-    event.stopPropagation();
 
     let title = document.getElementById('title');
     let slug = document.getElementById('slug');
