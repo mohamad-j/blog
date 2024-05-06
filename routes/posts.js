@@ -31,8 +31,12 @@ router.post('/create', function(req, res){
     req.body;
     // { title: 'test titel', slug: 'Slug change'}
 
-    let sql = ` insert into post( author_id, title, slug, created_at )
-                values( 6, 'test titel', 'Slug change', NOW() ) `;
+    let title = req.body.title;
+    let slug = req.body.slug;
+    let meta_titel = req.body.meta_titel;
+
+    let sql = ` insert into post( author_id, title, slug, meta_title, created_at )
+                values( 6, ?, ?, ?,  NOW() ) `;
 
     let pool = mysql.createPool({
         host:'localhost',
@@ -42,7 +46,7 @@ router.post('/create', function(req, res){
     });
 
 
-    pool.query( sql, function( error, result ){
+    pool.query( sql,[ title, slug, meta_titel ], function( error, result ){
         pool.end();
 
         res.json({mesage: "Done",err: error, the_result: result });

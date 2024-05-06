@@ -28,14 +28,14 @@ console.log(str4); // Output: Hello, World!
 //For example, `Hello, ${name}!`.
 // Example:
 let first_name = 'Alice';
-let greeting = `Hello, ${first_name}!`; // Using backticks
+let greeting = 'Hello, ' + first_name + 'aaf '; // Using backticks
 console.log(greeting); // Output: Hello, Alice!
 // In general, you can use single quotes or double quotes to create strings in JavaScript. 
 // However, if you need to embed expressions inside a string, you can use backticks to create template literals.
 // Embed expressions inside a string using backticks.
 // Example:
 let number = 42;
-let message = `The answer is ${number + 6 }.`; // Using backticks
+let message =  ` The answer is ${ number + 2 }. `; // Using backticks
 
 // Use variables inside a string using signle quotes or double quotes.
 // Example:
@@ -98,7 +98,7 @@ console.log(index1); // Output: -1
 // 7. How to replace a substring in a string?
 // You can replace a substring in a string using the replace() method.
 // Example:
-let str10 = 'Hello, World!';
+let str10 = 'Hello, World! World';
 let newStr = str10.replace('World', 'JavaScript');
 console.log(newStr); // Output: Hello, JavaScript!
 // The replace() method replaces only the first occurrence of the substring.
@@ -138,16 +138,16 @@ console.log(trimmed); // Output: Hello, World!
 // 11. How to split a string?
 // You can split a string into an array of substrings using the split() method.
 // Example:
-let str16 = 'Hello, World!';
-let parts = str16.split(', ');
-console.log(parts); // Output: ['Hello', 'World!']
+let str16 = 'Hello_World!_Rabi';
+let parts = str16.split('_');
+console.log(parts); // Output: ['Hello', 'World!', 'Rabi']
 
 // 12. How to join an array of strings?
 // You can join an array of strings into a single string using the join() method.
 // Example:
 let parts1 = ['Hello', 'World!'];
-let str17 = parts1.join(', ');
-console.log(str17); // Output: Hello, World!
+let str17 = parts1.join('_');
+console.log(str17); // Output: Hello_World!
 
 // 13. How to compare strings?
 // You can compare strings using the comparison operators (==, !=, ===, !==, <, >, <=, >=).
@@ -160,8 +160,9 @@ console.log(str18 < str19); // Output: true
 // You can check if a string contains a substring using the includes() method.
 // Example:
 let str20 = 'Hello, World!';
-let contains = str20.includes('World');
-console.log(contains); // Output: true
+let contains = str20.includes('Worlde');
+console.log(contains); // Output: false
+
 
 // 15. How to check if a string starts with a substring?
 // You can check if a string starts with a substring using the startsWith() method.
@@ -196,7 +197,7 @@ console.log(str24.charAt(7)); // Output: W
 // You can convert a string to an array of characters using the split('') method.
 // Example:
 let str25 = 'Hello, World!';
-let characters = str25.split('');
+let characters = str25.split(''); 
 console.log(characters); // Output: ['H', 'e', 'l', 'l', 'o', ',', ' ', 'W', 'o', 'r', 'l', 'd', '!']
 
 // 20. How to convert a string to an array of words?
@@ -251,7 +252,7 @@ let date1 = new Date();
 let str32 = date1.toDateString();
 console.log(str32); // Output: 'Sat Jan 01 2022'
 
-// 27. Regular expressions in JavaScript strings.
+// 27. Regular expressions in JavaScript strings. Advanced
 // Regular expressions (regex) are patterns used to match character combinations in strings.
 // You can use regular expressions with string methods like match(), search(), replace(), and split().
 // Example:
