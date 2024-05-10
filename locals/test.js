@@ -44,7 +44,7 @@ function generatePost( p_post )
   </article>`
 }
 
-function printPosts()
+function printPosts( callback )
 {
     
     // fetch from DB
@@ -57,22 +57,33 @@ function printPosts()
 
     });
 
-    pool.query('SELECT * FROM post', function (err, posts, fields) {
-        if (err) throw err;
-        console.log('The solution is: ', posts);
-        let html = "";
-        posts.forEach( p_post => {
-            html += generatePost( p_post );
-        });
-    
-        return html;
-    });
+    const result = pool.query('SELECT * FROM post');
+    console.log(result);
+    // pool.end();
 
+    return "Done : ";
     
 
 }
+
+function getData() {
+  const pool = mysql.createPool({
+      host: 'localhost',
+      user: 'root',
+      password: 'root123456',
+      database: 'blog',
+      port: 3306,
+  });
+
+  const [result] = pool.query('SELECT * FROM post');
+  console.log(result);
+  pool.end();
+}
+
+
 module.exports = {
     name,
     posts,
-    printPosts
+    printPosts,
+    getData
 }

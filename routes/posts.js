@@ -56,6 +56,7 @@ router.post('/create', function(req, res){
 
 // posts/update
 router.put('/update', function(req, res){
+    res.locals 
     res.json({ message: 'Update post' });
 });
 
